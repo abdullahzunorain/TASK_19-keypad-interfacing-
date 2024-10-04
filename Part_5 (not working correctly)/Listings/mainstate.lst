@@ -1,0 +1,84 @@
+C51 COMPILER V9.60.7.0   MAINSTATE                                                         09/16/2024 10:09:35 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAINSTATE
+OBJECT MODULE PLACED IN .\Objects\mainstate.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE mainstate.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\mainstate.lst) TABS(2) OBJECT(.\Objects\mainstate.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "LCD.h"
+   3          #include "CALCULATOR.h"
+   4          #include "TEMP.h"
+   5          #include "RTC.h"
+   6          #include <string.h>
+   7          char scan_key();
+   8          void rtc_state();
+   9          typedef enum {
+  10            state_calculator,
+  11            state_temperature,
+  12            state_rtc,
+  13          }STATE;
+  14          
+  15          
+  16          
+  17          STATE current_state = state_calculator;
+  18          char key='\0';
+  19          void main()
+  20          {
+  21   1        lcd_init();
+  22   1        DS1302_init();
+  23   1        DS1302_settime(0x23,0x59,0x50);
+  24   1        DS1302_setdate(0x31,0x12,0x23);
+  25   1        while(1)
+  26   1        {
+  27   2           key=scan_key();
+  28   2          switch(current_state)
+  29   2          {
+  30   3            case state_calculator:
+  31   3              lcd_clear();
+  32   3            calculator_state();
+  33   3            if(key=='C')
+  34   3            {
+  35   4              current_state=  state_temperature;
+  36   4            }
+  37   3            break;
+  38   3            
+  39   3      //      case  state_temperature:
+  40   3      //        lcd_clear();
+  41   3      //      temperature_state();
+  42   3      //      if(key=='C')
+  43   3      //      {
+  44   3      //        current_state=state_rtc;
+  45   3      //      }
+  46   3      //      break;
+  47   3            
+  48   3            case state_rtc:
+  49   3              lcd_clear();
+  50   3            rtc_state();
+  51   3            if(key=='C')
+  52   3            {
+  53   4              current_state= state_calculator;
+  54   4            }
+C51 COMPILER V9.60.7.0   MAINSTATE                                                         09/16/2024 10:09:35 PAGE 2   
+
+  55   3            break;
+  56   3          }
+  57   2        }
+  58   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

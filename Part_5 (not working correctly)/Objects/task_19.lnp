@@ -1,0 +1,8 @@
+".\Objects\main.obj",
+".\Objects\mainstate.obj",
+".\Objects\lcd.obj",
+".\Objects\calculator.obj",
+".\Objects\7sd.obj",
+".\Objects\temp.obj" 
+TO ".\Objects\task_19" 
+PRINT(".\Listings\task_19.m51") RAMSIZE(256) 

@@ -1,0 +1,8 @@
+".\Objects\CALCULATOR.obj",
+".\Objects\LCD.obj",
+".\Objects\main (2).obj",
+".\Objects\mainstate.obj",
+".\Objects\TEMP.obj",
+".\Objects\7sd.obj" 
+TO ".\Objects\State Machines" 
+PRINT(".\Listings\State Machines.m51") RAMSIZE(256) 
