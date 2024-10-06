@@ -1,6 +1,6 @@
 ## Task 19: 4x4 Keypad Interfacing with STC89C52 Microcontroller
 
-![Keypad Interface](keypad_interface_8051.jpg)
+![Keypad Interface](keypad interface in 8051.jpg)
 
 
 ### Objective:
