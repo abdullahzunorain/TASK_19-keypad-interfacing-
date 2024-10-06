@@ -2,6 +2,7 @@
 
 
 ![Keypad Interface](keypad interface in 8051.jpg)
+![Keypad Interface](./keypad%20interface%20in%208051.jpg)
 
 
 ![](keypad.jpg)
