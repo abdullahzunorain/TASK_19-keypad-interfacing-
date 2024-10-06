@@ -1,8 +1,8 @@
 ## Task 19: 4x4 Keypad Interfacing with STC89C52 Microcontroller
 
-![](keypad interface in 8051.jpg)
+![ ](keypad interface in 8051.jpg)
 
-![]()
+![ ](keypad.jpg)
 
 ### Objective:
 This task involves interfacing a 4x4 keypad with the STC89C52 microcontroller and running three different applications (calculator, real-time clock, and temperature monitor) in a non-blocking manner using a state machine. The applications will switch using the keypad's "ON/C" button.
